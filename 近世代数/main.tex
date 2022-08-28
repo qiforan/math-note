@@ -1,0 +1,114 @@
+\documentclass{ctexart}
+\usepackage{amssymb, mathtools, amsthm, multirow}
+\newtheorem{theorem}{\indent 定理}[section]
+\newtheorem{definition}{\indent 定义}[section]
+\newtheorem{lemma}[theorem]{\indent 引理}
+\renewcommand{\proofname}{\indent\bf 证明}
+
+\title{近世代数笔记}
+\author{王承厚}
+\begin{document}
+\maketitle
+\section{基本概念}
+\subsection{集合的定义}
+一般来说，集合有四种基本运算。
+
+1. 集合的交集
+
+\[
+    A \cap B = \{ x |  x \in A \textbf{ 且 } x \in B \}
+\]
+
+2. 集合的并集
+
+\[
+    A \cup B = \{ x |  x \in A \textbf{ 或 } x \in B \}
+\]
+
+3. 集合的差集
+
+\[
+    A - B = \{ x |  x \in A \textbf{ 且 } x \notin B \}
+\]
+
+若 A,B 是有限集，记 $|A|$ 为 A 元素的个数，则
+
+\[
+    |A \cup B| = |A| + |B| - |A \cap B|
+\]
+
+容斥原理：设 $A_i, i = 1,\ldots,n$ 为某固定集合的有限子集，则
+
+\[
+    |A_1 \cup \ldots \cup A_n| = \sum_{j=1}^{n}(-1)^{j-1} \sum_{\{i_1,\ldots,i_j\} \in \{1,\ldots,n\}}|A_{i_1} \cup|
+\]
+
+\subsection{常用记号}
+
+\begin{itemize}
+    \item $\mathbb{Z}_+$: 正整数集合
+    \item $\mathbb{N} = \mathbb{Z} + \{0\}$: 自然数集合
+    \item $\mathbb{Z}$: 整数集合
+    \item $F[X]$: F上的（一元）多项式的集合
+\end{itemize}
+
+\subsection{群的概念}
+
+群是一个带有一个二元运算的集合，运算满足结合律，具有单位元，且任一元素具有逆元。
+
+\section{群}
+
+\section{环和域}
+
+\subsection{环的定义}
+
+\begin{definition}
+    集合 R 称为（含幺）环(ring with identity)，是指 R 上存在加法和乘法两张运算，且
+
+    （1）R 关于加法是阿贝尔群，加法单位元记为 0；
+
+    （2）R 关于乘法是含幺半群，乘法单位元记为 1；
+
+    （3）R 加法和乘法满足\textbf{分配律}。
+
+    如果乘法满足交换律，则称 R 为\textbf{交换环}(commutative ring)。如果 $R - \{0\}$ 是乘法阿贝尔群，则称 R 为\textbf{域}(field)。
+\end{definition}
+
+\begin{definition}
+    如果 R 为环，a 既是左可逆的，又是右可逆的，则称 a 为\textbf{可逆}(invertible)，也称 a 为 R 中的\textbf{单位}(unit)。
+\end{definition}
+
+
+\begin{lemma}
+    （1）如果 a 可逆，则 a 的左逆等于右逆且唯一，记为 $a^{-1}$.
+
+    （2）环 R 中的单位集合构成一个群，称为 R 的\textbf{单位群}(group of units)，记为 $U(R)$ 或 $R^{\times}$.
+\end{lemma}
+
+\begin{definition}
+    如果交换环 R 没有零因子，称 R 为\textbf{整环}(integral domain)。
+\end{definition}
+
+\begin{lemma}
+    交换环 R 为整环当且仅当\textbf{消去律}成立。
+\end{lemma}
+
+\subsection{环的同态和同构}
+
+\begin{definition}
+    设 $R_1,R_2$ 为环，映射 $f: R_1 \rightarrow R_2$ 为同态，若：
+
+    （1）$f(1) = 1$,即将乘法单位元映到单位元。
+    
+    （2）对任意 $g,h \in R_1$，
+    \[
+    f(g+h) = f(g) + f(h),\quad f(gh) = f(g)f(h)
+    \]
+
+    如 $f$ 为单射，称为\textbf{单同态}，也称\textbf{嵌入}。
+
+\end{definition}
+
+条件（2）不能保证条件（1）成立。
+
+\end{document}
